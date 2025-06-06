@@ -2,6 +2,11 @@
 
 // Bureaucrat::GradeTooHighException or a Bureaucrat::GradeTooLowException.
 
+Bureaucrat::Bureaucrat( void ) {
+	std::cout << "Bureaucrat class constructor called" << std::endl;
+	return; 
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
 	std::cout << "Bureaucrat class constructor called" << std::endl;
 	//exceptions 
@@ -16,7 +21,7 @@ Bureaucrat::Bureaucrat( Bureaucrat const &copy ) {
 
 Bureaucrat	&Bureaucrat::operator=( Bureaucrat const &other ) {
 	if (this != &other) {
-		this->_name = other.getName();
+		//this->_name = other.getName();
 		this->_grade = other.getGrade();
 	}
 	return *this;

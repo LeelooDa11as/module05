@@ -10,6 +10,7 @@ class Bureaucrat
 	int					_grade;
 
 	public:
+	Bureaucrat( void );
 	Bureaucrat( std::string _name, int grade ); //1 max-150 lowest
 	Bureaucrat( Bureaucrat const &copy );
 	Bureaucrat &operator=( Bureaucrat const &other );
@@ -20,5 +21,11 @@ class Bureaucrat
 	void		increment( int points );
 	void		decrement( int points );
 };
+
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& b) {
+    out << b.getName() << ", bureaucrat grade " << b.getGrade() <<  ".";
+    return out;
+}
 
 #endif
