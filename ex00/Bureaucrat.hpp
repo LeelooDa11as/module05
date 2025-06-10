@@ -1,7 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/10 17:25:18 by kkoval            #+#    #+#             */
+/*   Updated: 2025/06/10 17:25:21 by kkoval           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include <string>
+#include <stdexcept>
+
+
 
 class Bureaucrat
 {
@@ -10,7 +26,7 @@ class Bureaucrat
 	int					_grade;
 
 	public:
-	Bureaucrat( void );
+	Bureaucrat( void ); // maybe should not exist because problematic grade
 	Bureaucrat( std::string _name, int grade ); //1 max-150 lowest
 	Bureaucrat( Bureaucrat const &copy );
 	Bureaucrat &operator=( Bureaucrat const &other );
@@ -20,12 +36,19 @@ class Bureaucrat
 	int			getGrade( void ) const;
 	void		increment( int points );
 	void		decrement( int points );
+
+	class GradeTooHighException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
 };
 
 
-std::ostream& operator<<(std::ostream& out, const Bureaucrat& b) {
-    out << b.getName() << ", bureaucrat grade " << b.getGrade() <<  ".";
-    return out;
-}
+std::ostream& operator<<(std::ostream& os, Bureaucrat const& b);
 
 #endif
