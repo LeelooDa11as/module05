@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:18 by kkoval            #+#    #+#             */
-/*   Updated: 2025/06/10 17:25:21 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/06/12 17:07:37 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
-
 
 
 class Bureaucrat

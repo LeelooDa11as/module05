@@ -6,19 +6,24 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:05 by kkoval            #+#    #+#             */
-/*   Updated: 2025/06/10 17:25:08 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/06/12 18:13:00 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat( void ) {
-	std::cout << "Bureaucrat class constructor called" << std::endl;
+#define RESET   "\033[0m"
+#define GREEN   "\033[32m"
+#define RED     "\033[31m"
+
+
+Bureaucrat::Bureaucrat( void ) : _name("default"), _grade(150) {
+	std::cout << GREEN << this->_name << " Bureaucrat class constructor called" << RESET << std::endl;
 	return; 
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
-	std::cout << "Bureaucrat class constructor called" << std::endl;
+	std::cout << GREEN << this->_name << " Bureaucrat class constructor called" << RESET << std::endl;
 	if (this->_grade < 1)
 		throw GradeTooHighException();
 	if (this->_grade > 150)
@@ -26,22 +31,22 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 	return; 
 }
 
-Bureaucrat::Bureaucrat( Bureaucrat const &copy ) {
-	std::cout << "Bureaucrat class copy constructor called" << std::endl;
-	*this = copy;
+Bureaucrat::Bureaucrat( Bureaucrat const &copy ) : _name(copy._name), _grade(copy._grade) {
+	std::cout << GREEN << this->_name << " Bureaucrat class copy constructor called" << RESET << std::endl;
+	//*this = copy;
 	return;
 }
 
 Bureaucrat	&Bureaucrat::operator=( Bureaucrat const &other ) {
+	std::cout << GREEN << this->_name << " Bureaucrat assigment operator called" << RESET << std::endl;
 	if (this != &other) {
-		//this->_name = other.getName();
 		this->_grade = other.getGrade();
 	}
 	return *this;
 }
 
 Bureaucrat::~Bureaucrat( void ) {
-	std::cout << "Bureaucrat classs destructor called" << std::endl;  
+	std::cout << RED << this->_name <<" Bureaucrat classs destructor called" << RESET << std::endl;  
 	return;
 }
 
@@ -65,7 +70,7 @@ void		Bureaucrat::increment ( int increment ) {
 	if (this->_grade - increment < 1)
 		throw GradeTooHighException();
 	this->_grade -= increment;
-	return;;
+	return;
 }
 
 void		Bureaucrat::decrement (int decrement) {
