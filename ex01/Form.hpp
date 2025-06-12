@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:26:42 by kkoval            #+#    #+#             */
-/*   Updated: 2025/06/10 17:40:33 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/06/12 19:50:54 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,13 @@ All these attributes are private, not protected
 class	Form {
 	private:
 	const std::string	_name;
-	bool				_signed; 
+	bool				_signed;
+	const int			_grade_for_sign;
+	const int			_grade_for_execute;
 
 	public:
+	void	beSigned(Bureaucrat& );
+	void	 
 };
 
 std::ostream& operator<<(std::ostream& os, Form const& b);
