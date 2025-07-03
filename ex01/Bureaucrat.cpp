@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:05 by kkoval            #+#    #+#             */
-/*   Updated: 2025/07/03 17:52:04 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/06/12 18:13:00 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,6 @@ void		Bureaucrat::decrement (int decrement) {
 		throw GradeTooLowException();
 	this->_grade += decrement;
 	return;
-}
-
-void		Bureaucrat::beSigned(Form &paper) {
-	
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {

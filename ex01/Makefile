@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/06/10 17:27:19 by kkoval            #+#    #+#              #
-#    Updated: 2025/06/10 17:27:21 by kkoval           ###   ########.fr        #
+#    Created: 2025/06/10 17:25:42 by kkoval            #+#    #+#              #
+#    Updated: 2025/07/03 14:33:00 by kkoval           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = form
+NAME = bureau
 SRC = Bureaucrat.cpp Form.cpp main.cpp
 F_OBJ = obj/
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
