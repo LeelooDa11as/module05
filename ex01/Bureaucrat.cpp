@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:05 by kkoval            #+#    #+#             */
-/*   Updated: 2025/06/12 18:13:00 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/08/27 16:48:55 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void		Bureaucrat::decrement (int decrement) {
 	this->_grade += decrement;
 	return;
 }
+
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
     os << b.getName() << ", bureaucrat grade " << b.getGrade() <<  ".";

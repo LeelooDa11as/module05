@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(void) : _name("Deafult"), _signed(false), _sign_grade(50), _execute_grade(40){
+Form::Form(void) : _name("Default"), _signed(false), _sign_grade(50), _execute_grade(40){
     std::cout << "Form class default constructor called" << std::endl;
     return;
 }
@@ -12,11 +12,7 @@ Form::Form(std::string &name, const int &sign_grade, const int &execute_grade) :
 
 Form::Form(Form const &base) {
     std::cout <<"Form class copy constructor called" << std::endl;
-    if (this != base)
-    {
-        const int
-    }
-    return (*this);
+    return;
 }
 
 Form::&operator=(Form const &other) {
@@ -38,6 +34,14 @@ const int&  Form::getSignGrade(void) const {
 
 const int&   Form::getExecuteGrade(void) const {
     return  this->_execute_grade;
+}
+
+const char*	Form::GradeTooHighException::what() const throw() {
+	return "Grade too high";
+}
+
+const char*	Form::GradeTooLowException::what() const throw() {
+	return "Grade too low";
 }
 
 void         Form::beSigned(Bureaucrat& office_rat) {

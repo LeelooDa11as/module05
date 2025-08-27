@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:26:42 by kkoval            #+#    #+#             */
-/*   Updated: 2025/07/03 17:51:36 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/08/27 16:59:17 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,15 @@ class	Form {
 
 	void				beSigned(Bureaucrat &office_rat); // makes the form signed if the bureaucrat's grade is high enough
 	
+	class GradeTooLowException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
+
+	class GradeTooHighException : public std::exception {
+	public:
+		const char* what() const throw();
+	};
 };
 
 std::ostream& operator<<(std::ostream& os, Form const& b);

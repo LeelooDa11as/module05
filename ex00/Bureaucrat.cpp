@@ -6,7 +6,7 @@
 /*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:05 by kkoval            #+#    #+#             */
-/*   Updated: 2025/07/03 17:52:04 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/08/27 16:11:06 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 
 Bureaucrat::Bureaucrat( void ) : _name("default"), _grade(150) {
-	std::cout << GREEN << this->_name << " Bureaucrat class constructor called" << RESET << std::endl;
+	std::cout << GREEN << this->_name << " Bureaucrat class default constructor called" << RESET << std::endl;
 	return; 
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
-	std::cout << GREEN << this->_name << " Bureaucrat class constructor called" << RESET << std::endl;
+	std::cout << GREEN << this->_name << " Bureaucrat class full constructor called" << RESET << std::endl;
 	if (this->_grade < 1)
 		throw GradeTooHighException();
 	if (this->_grade > 150)
@@ -80,9 +80,6 @@ void		Bureaucrat::decrement (int decrement) {
 	return;
 }
 
-void		Bureaucrat::beSigned(Form &paper) {
-	
-}
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {
     os << b.getName() << ", bureaucrat grade " << b.getGrade() <<  ".";
