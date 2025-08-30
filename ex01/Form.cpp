@@ -15,7 +15,7 @@ Form::Form(Form const &base) {
     return;
 }
 
-Form::&operator=(Form const &other) {
+Form& Form::operator=(Form const &other) {
     std::cout << "Form assignment operator called" << std::endl;
 }
 
