@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kate <kate@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:29 by kkoval            #+#    #+#             */
-/*   Updated: 2025/06/12 19:36:35 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/08/31 22:30:05 by kate             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+
 #define RESET	"\033[0m"
 #define BLUE	"\033[38;5;117m"
 
@@ -18,12 +20,17 @@ int	main( void )
 {
 	std::cout << BLUE << "--------------------Constructor Tests--------------------" << RESET << std::endl;
 	try {
-		Bureaucrat one("Alice", 0);
-		one.increment(1);
-		std::cout << one << std::endl;
+		Bureaucrat	Polly("Polly", 10);
+		Form		separation_papers("divorce", 9, 9);		
+		Polly.signForm(separation_papers);
+		Polly.increment(1);
+		Polly.signForm(separation_papers);
+		std::cout << Polly << std::endl;
+		std::cout << separation_papers << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
+		std::cout << "!!!!!!!!!!!!!!!!" << std::endl; // should not enter as Bureaucrat catches the Form exceptions
 	}
 	
 	try {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kate <kate@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:26:42 by kkoval            #+#    #+#             */
-/*   Updated: 2025/08/27 16:59:17 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/08/31 22:37:29 by kate             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,26 @@ class	Form {
 	public:
 	
 	Form(void);
-	Form(std::string &name, const int &sign_grade, const int &execute_grade);
+	Form(const std::string &name, const int &sign_grade, const int &execute_grade);
 	Form(Form const &base);
 	Form &operator=(Form const &other);
 	~Form(void);
 	
+	const std::string&	getName(void) const;
 	bool				getSigned(void) const;
 	const int&			getSignGrade(void) const;
 	const int&			getExecuteGrade(void) const;
 
-	void				beSigned(Bureaucrat &office_rat); // makes the form signed if the bureaucrat's grade is high enough
+	void				beSigned(Bureaucrat &office_rat);
 	
 	class GradeTooLowException : public std::exception {
 	public:
-		const char* what() const throw();
+		virtual const char* what() const throw();
 	};
 
 	class GradeTooHighException : public std::exception {
 	public:
-		const char* what() const throw();
+		virtual const char* what() const throw();
 	};
 };
 

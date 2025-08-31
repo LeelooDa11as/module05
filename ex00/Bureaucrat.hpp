@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kate <kate@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:18 by kkoval            #+#    #+#             */
-/*   Updated: 2025/06/12 17:07:37 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/08/31 21:33:50 by kate             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Bureaucrat
 	int					_grade;
 
 	public:
-	Bureaucrat( void ); // maybe should not exist because problematic grade
-	Bureaucrat( std::string _name, int grade ); //1 max-150 lowest
+	Bureaucrat( void );
+	Bureaucrat( std::string _name, int grade );
 	Bureaucrat( Bureaucrat const &copy );
 	Bureaucrat &operator=( Bureaucrat const &other );
 	~Bureaucrat( void );

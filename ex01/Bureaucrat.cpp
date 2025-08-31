@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kate <kate@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:05 by kkoval            #+#    #+#             */
-/*   Updated: 2025/08/27 16:48:55 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/08/31 22:27:08 by kate             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 #define RESET   "\033[0m"
 #define GREEN   "\033[32m"
 #define RED     "\033[31m"
+#define BLUE	"\033[34m"  
 
 
 Bureaucrat::Bureaucrat( void ) : _name("default"), _grade(150) {
@@ -77,6 +79,16 @@ void		Bureaucrat::decrement (int decrement) {
 	if (this->_grade + decrement > 150)
 		throw GradeTooLowException();
 	this->_grade += decrement;
+	return;
+}
+
+void		Bureaucrat::signForm(Form &form) {
+	try {
+		form.beSigned(*this);
+	}
+	catch (const std::exception &e) {
+		std::cout << BLUE << this->_name << " couldn't sign " << form.getName()  << " because of " << e.what() << RESET << std::endl;
+	}
 	return;
 }
 
