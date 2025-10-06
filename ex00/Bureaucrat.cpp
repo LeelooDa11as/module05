@@ -6,7 +6,7 @@
 /*   By: kate <kate@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:05 by kkoval            #+#    #+#             */
-/*   Updated: 2025/08/31 20:45:45 by kate             ###   ########.fr       */
+/*   Updated: 2025/09/19 02:24:50 by kate             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,19 +65,7 @@ int			Bureaucrat::getGrade( void ) const {
 	return this->_grade;
 }
 
-void		Bureaucrat::increment ( int increment ) {
-	if (this->_grade - increment < 1)
-		throw GradeTooHighException();
-	this->_grade -= increment;
-	return;
-}
 
-void		Bureaucrat::decrement (int decrement) {
-	if (this->_grade + decrement > 150)
-		throw GradeTooLowException();
-	this->_grade += decrement;
-	return;
-}
 
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b) {

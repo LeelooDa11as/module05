@@ -1,17 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kate <kate@student.42.fr>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 17:25:05 by kkoval            #+#    #+#             */
-/*   Updated: 2025/09/19 03:57:32 by kate             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 #define RESET   "\033[0m"
 #define GREEN   "\033[32m"
@@ -82,14 +70,27 @@ void		Bureaucrat::decrement (int decrement) {
 	return;
 }
 
-void		Bureaucrat::signForm(Form &form) const {
+
+void		Bureaucrat::signForm(AForm &form) const {
 	try {
-		form.beSigned(*this);
+		form.beSigned( *this);
 	}
 	catch (const std::exception &e) {
 		std::cout << BLUE << this->_name << " couldn't sign " << form.getName()  << " because of " << e.what() << RESET << std::endl;
 	}
 	return;
+}
+
+void		Bureaucrat::executeForm(AForm const &form) const{
+	try {
+		form.execute(*this);
+	}
+	
+	catch (const std::exception &e) {
+		std::cerr << this->getName() <<  " could not execute " << form.getName() << " because " << e.what() << std::endl;
+		return;
+	}
+	std::cout << this->_name << " executed " << form.getName() << std::endl;
 }
 
 

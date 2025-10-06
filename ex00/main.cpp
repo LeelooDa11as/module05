@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kate <kate@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:29 by kkoval            #+#    #+#             */
-/*   Updated: 2025/08/27 16:25:58 by kkoval           ###   ########.fr       */
+/*   Updated: 2025/09/19 03:37:22 by kate             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ int	main( void )
 		one.increment(1);
 		std::cout << one << std::endl;
 	}
-	catch (const std::exception& e) {
+
+	// a type not needed as we are catching an object, but need a reference to prevent slicing and extra copies
+	catch (const std::exception &e) { 
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 	
@@ -31,8 +33,17 @@ int	main( void )
 		two.decrement(10);
 		std::cout << two << std::endl;
 	}
-	catch (const std::exception& e) {
+
+	catch (Bureaucrat::GradeTooHighException e) {
 		std::cerr << "Error: " << e.what() << std::endl;
+	}
+
+	catch (Bureaucrat::GradeTooLowException e) {
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
+
+	catch(...) {
+		std::cerr << "I am here just for learning purposes" << std::endl;
 	}
 
 	Bureaucrat	three("Poppy", 75);

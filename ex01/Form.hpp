@@ -6,7 +6,7 @@
 /*   By: kate <kate@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:26:42 by kkoval            #+#    #+#             */
-/*   Updated: 2025/08/31 22:37:29 by kate             ###   ########.fr       */
+/*   Updated: 2025/09/19 03:53:07 by kate             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class	Form {
 	const int&			getSignGrade(void) const;
 	const int&			getExecuteGrade(void) const;
 
-	void				beSigned(Bureaucrat &office_rat);
+	void				beSigned(const Bureaucrat &office_rat);
 	
 	class GradeTooLowException : public std::exception {
 	public:

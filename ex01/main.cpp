@@ -6,7 +6,7 @@
 /*   By: kate <kate@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:29 by kkoval            #+#    #+#             */
-/*   Updated: 2025/08/31 22:30:05 by kate             ###   ########.fr       */
+/*   Updated: 2025/09/01 00:49:28 by kate             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	main( void )
 		std::cerr << "Error: " << e.what() << std::endl;
 		std::cout << "!!!!!!!!!!!!!!!!" << std::endl; // should not enter as Bureaucrat catches the Form exceptions
 	}
-	
 	try {
 		Bureaucrat	two("Janice", 151);
 		two.decrement(10);

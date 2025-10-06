@@ -62,7 +62,7 @@ const char*	Form::GradeTooLowException::what() const throw() {
 	return "Grade too low";
 }
 
-void         Form::beSigned(Bureaucrat& office_rat) {
+void         Form::beSigned(const Bureaucrat& office_rat) {
     if (office_rat.getGrade() <= this->_sign_grade && this->_signed == false) {
         this->_signed = true;
         std::cout << YELLOW << office_rat.getName() << " signed " << this->_name << RESET<< std::endl;
