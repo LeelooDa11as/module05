@@ -12,8 +12,8 @@ class Bureaucrat;
 class RobotomyRequestForm : public AForm
 {
 	private:
-		std::string _target;
-		bool	seeded;
+		std::string	_target;
+		static bool	seeded;
 
 	public:
 		RobotomyRequestForm(void);

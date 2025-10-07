@@ -11,7 +11,7 @@ class Bureaucrat;
 
 class ShrubberyCreationForm : public AForm
 {
-	std::string target;
+	private:
 		std::string	_target;
 
 	public:

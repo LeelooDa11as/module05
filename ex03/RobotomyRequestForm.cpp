@@ -1,8 +1,8 @@
 #include "RobotomyRequestForm.hpp"
 
 
-RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72, 45) {
-    std::cout << "RobotomyRequestForm class constructor called" << std::endl;
+RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72, 45), _target("No target"){
+    std::cout << "RobotomyRequestForm default class constructor called" << std::endl;
     bool seeded = false;
     if (!seeded) {
         srand(time(0));
@@ -11,7 +11,7 @@ RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RobotomyRequestForm", 72, 45) {
-    std::cout << "RobotomyRequestForm class constructor called" << std::endl;
+    std::cout << "RobotomyRequestForm target class constructor called" << std::endl;
     this->_target = target;
      if (!seeded) {
         srand(time(0));

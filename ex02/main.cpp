@@ -6,7 +6,57 @@
 #define RESET	"\033[0m"
 #define BLUE	"\033[38;5;117m"
 
+
 void    test1(void) {
+    std::cout << BLUE << "--------------------Constructors--------------------\n" << RESET << std::endl;
+
+    std::cout << "DEFAULT" << std::endl;
+    ShrubberyCreationForm s1;
+    RobotomyRequestForm r1;
+    PresidentialPardonForm p1;
+
+    std::cout << "Targets: " 
+              << s1.getTarget() << ", "
+              << r1.getTarget() << ", "
+              << p1.getTarget() << std::endl;
+
+    std::cout << "\nPARAMETERIZED\n" << std::endl;
+    ShrubberyCreationForm s2("Garden");
+    RobotomyRequestForm r2("Robot");
+    PresidentialPardonForm p2("Criminal");
+
+    std::cout << "Targets: " 
+              << s2.getTarget() << ", "
+              << r2.getTarget() << ", "
+              << p2.getTarget() << std::endl;
+
+    std::cout << "\nCOPY\n" << std::endl;
+    ShrubberyCreationForm s3(s2);
+    RobotomyRequestForm r3(r2);
+    PresidentialPardonForm p3(p2);
+
+    std::cout << "Copied Targets: " 
+              << s3.getTarget() << ", "
+              << r3.getTarget() << ", "
+              << p3.getTarget() << std::endl;
+
+    std::cout << "\nASSIGNMENT\n" << std::endl;
+    ShrubberyCreationForm s4;
+    RobotomyRequestForm r4;
+    PresidentialPardonForm p4;
+
+    s4 = s2;
+    r4 = r2;
+    p4 = p2;
+
+    std::cout << "Assigned Targets: " 
+              << s4.getTarget() << ", "
+              << r4.getTarget() << ", "
+              << p4.getTarget() << std::endl;
+    return;
+}
+
+void    test2(void) {
     std::cout << BLUE << "--------------------Pollymophy and variables--------------------\n" << RESET << std::endl;
     PresidentialPardonForm  form1("Nancy");
     ShrubberyCreationForm   form2("Rose");
@@ -44,7 +94,7 @@ void    test1(void) {
     return;
 }
 
-void    test2(void) {
+void    test3(void) {
     std::cout << BLUE << "--------------------Exception Testing--------------------\n" << RESET << std::endl;
 
     PresidentialPardonForm  form1("Nancy");
@@ -62,7 +112,6 @@ void    test2(void) {
 	senior.executeForm(form1);
 	try {
 		senior.increment(15);
-		std::cerr << "!!! If you see this exception failed !!!" << std::endl;
 	}
 	catch(const std::exception &e){
 		std::cout << "Error: " << e.what() << std::endl;
@@ -89,7 +138,6 @@ void    test2(void) {
 	std::cout << "\nLet's see who has luck with Robotomized\n" << std::endl;
 
 	senior.signForm(form3);
-	std::cout << "!!!!!" << std::endl;
 	senior.executeForm(form3);
 	mid.executeForm(form3);
 	senior.executeForm(form3);
@@ -97,10 +145,10 @@ void    test2(void) {
     return;
 }
 
-int main() {
-    //test1();
-    test2();
+int main(void) {
+    test1();
+    //test2();
     //test3();
-    
+   
    return(1);
 }

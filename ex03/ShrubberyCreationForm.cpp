@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("Shrubbery", 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("Shrubbery", 145, 137), _target("No target") {
     std::cout << "ShrubberyCreationForm default class constructor called" << std::endl;
 }
 
@@ -41,8 +41,15 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const{
         std::cerr << file_name << " could not be opened" << std::endl;
         return;
     }
-	file << "   🌳🌳🌳\n"
-           "  🌳🌳🌳🌳\n"
-           " 🌳🌳🌳🌳🌳\n";
+	file << "       _-_       \n"
+            "    /~~   ~~\\   \n"
+            " /~~         ~~\\\n"
+            "{               }\n"
+            " \\  _-     -_  /\n"
+            "   ~  \\\\ //  ~  \n"
+            "_- -   | | _- _ \n"
+            "  _ -  | |   -_ \n"
+            "      // \\\\     \n";
+
 	file.close(); // optional here, the end of scope would close it, but would be necessary if another file would be opened in the same function
 }
