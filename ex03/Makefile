@@ -6,12 +6,12 @@
 #    By: kate <kate@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 17:25:42 by kkoval            #+#    #+#              #
-#    Updated: 2025/09/22 00:58:43 by kate             ###   ########.fr        #
+#    Updated: 2025/10/07 04:20:39 by kate             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bureau
-SRC = Bureaucrat.cpp AForm.cpp main.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRC = Bureaucrat.cpp AForm.cpp main.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 F_OBJ = obj/
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))

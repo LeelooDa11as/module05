@@ -1,5 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
+bool    RobotomyRequestForm::seeded = false;
 
 RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72, 45), _target("No target"){
     std::cout << "RobotomyRequestForm default class constructor called" << std::endl;
