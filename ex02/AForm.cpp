@@ -88,7 +88,8 @@ std::ostream& operator<<(std::ostream& os, AForm const& b) {
     os << b.getName() << " sign grade is: " << b.getSignGrade() << ",\nexecute grade is: " << b.getExecuteGrade() << ",\n" << b.getName();
     if (b.getSigned())
         os << " is signed.";
-    else
+    else {
         os << " is not signed";
+    }
 	return os;
-}
+}   

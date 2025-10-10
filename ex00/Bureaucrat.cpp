@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kate <kate@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 17:25:05 by kkoval            #+#    #+#             */
-/*   Updated: 2025/09/19 02:24:50 by kate             ###   ########.fr       */
+/*   Updated: 2025/10/10 17:30:20 by kkoval           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,20 @@ Bureaucrat	&Bureaucrat::operator=( Bureaucrat const &other ) {
 
 Bureaucrat::~Bureaucrat( void ) {
 	std::cout << RED << this->_name <<" Bureaucrat classs destructor called" << RESET << std::endl;  
+	return;
+}
+
+void		Bureaucrat::increment ( int increment ) {
+	if (this->_grade - increment < 1)
+		throw GradeTooHighException();
+	this->_grade -= increment;
+	return;
+}
+
+void		Bureaucrat::decrement (int decrement) {
+	if (this->_grade + decrement > 150)
+		throw GradeTooLowException();
+	this->_grade += decrement;
 	return;
 }
 

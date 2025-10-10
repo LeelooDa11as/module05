@@ -6,12 +6,12 @@
 #    By: kkoval <kkoval@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/10 17:25:42 by kkoval            #+#    #+#              #
-#    Updated: 2025/06/10 17:25:44 by kkoval           ###   ########.fr        #
+#    Updated: 2025/10/10 17:27:28 by kkoval           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bureau
-SRC = Bureaucrat.cpp main.cpp
+SRC = main.cpp Bureaucrat.cpp 
 F_OBJ = obj/
 OBJ = $(addprefix $(F_OBJ), $(SRC:.cpp=.o))
 DEP = $(addprefix $(F_OBJ), $(SRC:.cpp=.d))
